@@ -15,7 +15,7 @@
         grid-template-columns: 120px 1fr 120px;
         align-items: center;
         justify-items: center;
-        gap: 16px;
+        gap: 24px;
       }
       #imgs {
         width: 100%;
@@ -33,14 +33,14 @@
       }
       h3 {
         grid-column: 3 span;
-        margin: 0 0 -10px;
+        margin: 10px 0 -10px;
         font-weight: 500;
         font-size: 18px;
       }
       bar {
         position: relative;
         width: 100%;
-        height: 32px;
+        height: 24px;
         --c: 5;
         --w: calc(100% / var(--c));
         background: repeating-linear-gradient(to right, #fff, #fff var(--w), #aac var(--w), #aac calc(var(--w) + 1px));
@@ -49,12 +49,12 @@
       }
       bar bai, bar yeh {
         position: absolute;
-        margin-left: -8px;
+        margin-left: -6px;
         top: 0;
         left: calc(100% / var(--c) * (var(--p) - 0.5));
         display: block;
-        width: 16px;
-        height: 32px;
+        width: 12px;
+        height: 24px;
         border-radius: 4px;
       }
       bar bai { background: #c1c1c1; }
@@ -79,27 +79,102 @@
           <div id="imgs">
             <img src="/baiyeh/imgs/bai_1.png"/>
             <img src="/baiyeh/imgs/yeh_1.png"/>
-            <div>白恩</div>
-            <div>阿耶</div>
+            <div style="color: #8b8b8b">白恩</div>
+            <div style="color: #625d9b">阿耶</div>
           </div>
 
-          <h3>長相</h3>
+          <h3>一般</h3>
           <span>美人</span>
-          <bar><bai style="--p:2;"></bai><yeh style="--p:2;"></yeh></bar>
-          <span>醜</span>
+          <bar><bai style="--p:2"></bai><yeh style="--p:2"></yeh></bar>
+          <span>不修邊幅</span>
+
           <span>成熟</span>
-          <bar><bai style="--p:3;"></bai><yeh style="--p:3;"></yeh></bar>
+          <bar><bai style="--p:3"></bai><yeh style="--p:3"></yeh></bar>
           <span>童顏</span>
 
-          <h3>膚色</h3>
-          <span>偏黑</span>
-          <bar><bai style="--p:4;"></bai><yeh style="--p:3;"></yeh></bar>
-          <span>偏白</span>
+          <span>膚色偏黑</span>
+          <bar><bai style="--p:4"></bai><yeh style="--p:3"></yeh></bar>
+          <span>膚色偏白</span>
 
-          <h3>膚色</h3>
           <span>健壯</span>
-          <bar><bai style="--p:4;"></bai><yeh style="--p:2;"></yeh></bar>
+          <bar><bai style="--p:4"></bai><yeh style="--p:2"></yeh></bar>
           <span>纖細</span>
+
+          <span>體溫偏高</span>
+          <bar><bai style="--p:1"></bai><yeh style="--p:2"></yeh></bar>
+          <span>體溫偏高</span>
+
+          <span>會搭配</span>
+          <bar><bai style="--p:4"></bai><yeh style="--p:2"></yeh></bar>
+          <span>不擅穿搭</span>
+
+          <span>聲音偏高</span>
+          <bar><bai style="--p:4"></bai><yeh style="--p:3"></yeh></bar>
+          <span>聲音偏低</span>
+
+          <span>性格直爽</span>
+          <bar><bai style="--p:3"></bai><yeh style="--p:2"></yeh></bar>
+          <span>性格彆扭</span>
+
+          <span>情緒表現激烈</span>
+          <bar><bai style="--p:5"></bai><yeh style="--p:3"></yeh></bar>
+          <span>面癱</span>
+
+          <span>擅長說謊</span>
+          <bar><bai style="--p:2"></bai><yeh style="--p:4"></yeh></bar>
+          <span>不擅長說謊</span>
+
+          <span>知識淵博</span>
+          <bar><bai style="--p:2"></bai><yeh style="--p:3"></yeh></bar>
+          <span>不諳世事</span>
+
+          <span>字體工整</span>
+          <bar><bai style="--p:1"></bai><yeh style="--p:2"></yeh></bar>
+          <span>筆跡雜亂</span>
+
+          <span>房間整齊</span>
+          <bar><bai style="--p:4"></bai><yeh style="--p:3"></yeh></bar>
+          <span>房間雜亂</span>
+
+          <span>房間裝潢華麗</span>
+          <bar><bai style="--p:5"></bai><yeh style="--p:4"></yeh></bar>
+          <span>房間簡樸</span>
+
+          <span>擅長讀書</span>
+          <bar><bai style="--p:1"></bai><yeh style="--p:2"></yeh></bar>
+          <span>不擅長讀書</span>
+
+          <span>喜歡讀書</span>
+          <bar><bai style="--p:1"></bai><yeh style="--p:3"></yeh></bar>
+          <span>討厭讀書</span>
+
+          <span>擅長運動</span>
+          <bar><bai style="--p:2"></bai><yeh style="--p:2"></yeh></bar>
+          <span>不擅長運動</span>
+
+          <span>喜歡運動</span>
+          <bar><bai style="--p:3"></bai><yeh style="--p:2"></yeh></bar>
+          <span>討厭運動</span>
+
+          <span>喜歡動物</span>
+          <bar><bai style="--p:3"></bai><yeh style="--p:1"></yeh></bar>
+          <span>討厭動物</span>
+
+          <span>被動物喜歡</span>
+          <bar><bai style="--p:3"></bai><yeh style="--p:2"></yeh></bar>
+          <span>被動物討厭</span>
+
+          <span>XX</span>
+          <bar><bai style="--p:0"></bai><yeh style="--p:0"></yeh></bar>
+          <span>XX</span>
+
+          <span>XX</span>
+          <bar><bai style="--p:0"></bai><yeh style="--p:0"></yeh></bar>
+          <span>XX</span>
+
+          <span>XX</span>
+          <bar><bai style="--p:0"></bai><yeh style="--p:0"></yeh></bar>
+          <span>XX</span>
         </list>
       </div>
     </main>
