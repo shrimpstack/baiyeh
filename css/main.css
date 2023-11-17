@@ -1,0 +1,29 @@
+@import url(./notosanstc.css);
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  overflow: hidden;
+  background: #fafafa;
+  font-family: 'Noto Sans TC', Arial, sans-serif;
+}
+
+#root {
+  overflow: auto;
+}
+#main_content {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+  width: 100vw;
+  max-width: 900px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 24px;
+}
