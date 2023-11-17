@@ -30,6 +30,9 @@ h1 {
 }
 
 @media (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
   #main_content {
     padding: 16px 8px 48px;
   }

@@ -68,6 +68,14 @@
         z-index: 1;
         border-radius: 4px 4px 0 0;
       }
+      @media (min-width: 768px) {
+        span br { display: none; }
+      }
+      @media (max-width: 767px) {
+        list {
+          grid-template-columns: 80px 1fr 80px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -116,7 +124,7 @@
           <bar><bai style="--p:3"></bai><yeh style="--p:2"></yeh></bar>
           <span>性格彆扭</span>
 
-          <span>情緒表現激烈</span>
+          <span>情緒表現<br>激烈</span>
           <bar><bai style="--p:5"></bai><yeh style="--p:3"></yeh></bar>
           <span>面癱</span>
 
@@ -136,7 +144,7 @@
           <bar><bai style="--p:4"></bai><yeh style="--p:3"></yeh></bar>
           <span>房間雜亂</span>
 
-          <span>房間裝潢華麗</span>
+          <span>房間<br>裝潢華麗</span>
           <bar><bai style="--p:5"></bai><yeh style="--p:4"></yeh></bar>
           <span>房間簡樸</span>
 
@@ -160,9 +168,9 @@
           <bar><bai style="--p:3"></bai><yeh style="--p:1"></yeh></bar>
           <span>討厭動物</span>
 
-          <span>被動物喜歡</span>
+          <span>被動物<br>喜歡</span>
           <bar><bai style="--p:3"></bai><yeh style="--p:2"></yeh></bar>
-          <span>被動物討厭</span>
+          <span>被動物<br>討厭</span>
 
           <span>XX</span>
           <bar><bai style="--p:0"></bai><yeh style="--p:0"></yeh></bar>
