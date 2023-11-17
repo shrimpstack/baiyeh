@@ -15,7 +15,7 @@
         grid-template-columns: 120px 1fr 120px;
         align-items: center;
         justify-items: center;
-        gap: 24px;
+        gap: 24px 4px;
       }
       #imgs {
         width: 100%;
@@ -27,7 +27,7 @@
       }
       #imgs img {
         width: 300px;
-        height: 300px;
+        max-width: calc(50vw - 24px);
         border-radius: 8px;
         box-shadow: 2px 2px 3px #0061;
       }
@@ -58,7 +58,7 @@
         border-radius: 4px;
       }
       bar bai { background: #c1c1c1; }
-      bar yeh { background: #8986af; }
+      bar yeh { background: #466b8d; }
       bar bai:after {
         content: "";
         position: absolute;
@@ -80,7 +80,7 @@
             <img src="/baiyeh/imgs/bai_1.png"/>
             <img src="/baiyeh/imgs/yeh_1.png"/>
             <div style="color: #8b8b8b">白恩</div>
-            <div style="color: #625d9b">阿耶</div>
+            <div style="color: #073763">阿耶</div>
           </div>
 
           <h3>一般</h3>
