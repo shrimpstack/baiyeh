@@ -12,10 +12,10 @@
     <style>
       list {
         display: grid;
-        grid-template-columns: 120px 1fr 120px;
+        grid-template-columns: minmax(max-content, 25%) 1fr minmax(max-content, 25%);
         align-items: center;
         justify-items: center;
-        gap: 24px 4px;
+        gap: 24px 16px;
       }
       #imgs {
         width: 100%;
@@ -43,6 +43,7 @@
         height: 24px;
         --c: 5;
         --w: calc(100% / var(--c));
+        --w: calc((100% - calc((var(--c) - 1) * 1px)) / var(--c));
         background: repeating-linear-gradient(to right, #fff, #fff var(--w), #aac var(--w), #aac calc(var(--w) + 1px));
         border-radius: 4px;
         border: 1px solid #aac;
@@ -54,7 +55,7 @@
         left: calc(100% / var(--c) * (var(--p) - 0.5));
         display: block;
         width: 12px;
-        height: 24px;
+        height: 100%;
         border-radius: 4px;
       }
       bar bai { background: #c1c1c1; }
@@ -68,13 +69,22 @@
         z-index: 1;
         border-radius: 4px 4px 0 0;
       }
-      list span { text-align: center; }
+      list span:nth-child(3n + 3) {
+        justify-self: end;
+        text-align: right;
+      }
+      list span:nth-child(3n + 5) {
+        justify-self: start;
+      }
       @media (min-width: 768px) {
         list span br { display: none; }
       }
       @media (max-width: 767px) {
         list {
-          grid-template-columns: 80px 1fr 80px;
+          gap: 16px 8px;
+        }
+        bar {
+          height: 16px;
         }
       }
     </style>
@@ -131,7 +141,7 @@
 
           <span>擅長說謊</span>
           <bar><bai style="--p:2"></bai><yeh style="--p:4"></yeh></bar>
-          <span>不擅長說謊</span>
+          <span>不擅長<br>說謊</span>
 
           <span>知識淵博</span>
           <bar><bai style="--p:2"></bai><yeh style="--p:3"></yeh></bar>
@@ -151,7 +161,7 @@
 
           <span>擅長讀書</span>
           <bar><bai style="--p:1"></bai><yeh style="--p:2"></yeh></bar>
-          <span>不擅長讀書</span>
+          <span>不擅長<br>讀書</span>
 
           <span>喜歡讀書</span>
           <bar><bai style="--p:1"></bai><yeh style="--p:3"></yeh></bar>
@@ -159,7 +169,7 @@
 
           <span>擅長運動</span>
           <bar><bai style="--p:2"></bai><yeh style="--p:2"></yeh></bar>
-          <span>不擅長運動</span>
+          <span>不擅長<br>運動</span>
 
           <span>喜歡運動</span>
           <bar><bai style="--p:3"></bai><yeh style="--p:2"></yeh></bar>

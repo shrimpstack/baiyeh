@@ -65,6 +65,7 @@ header #header_switch {
     align-items: center;
     height: 32px;
     padding: 0 8px;
+    font-size: 16px;
   }
   header a.active {
     background: #d9d7ff;
