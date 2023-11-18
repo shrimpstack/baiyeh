@@ -23,8 +23,11 @@
       .main_img, .name {
         justify-self: center;
       }
+      .main_img {
+        max-width: 100%;
+      }
       .name {
-        font-size: 20px;
+        font-size: 22px;
         font-weight: 500;
       }
       h5 {
@@ -39,6 +42,7 @@
       .info {
         text-align: center;
       }
+      .info dot:after { content: "、"; }
       .text {
         padding: 0 16px;
       }
@@ -50,6 +54,52 @@
         top: 0;
         border-left: 1px solid #aaa;
         height: 100%;
+      }
+      .text img {
+        max-width: 100%;
+        margin: 16px 0;
+        cursor: pointer;
+      }
+      @media (max-width: 767px) {
+        list {
+          font-size: 16px;
+        }
+        .name, h5 {
+          font-size: 20px;
+        }
+        .text {
+          grid-column: 2 span;
+        }
+        .info.b:after, .text.b:after {
+          display: none;
+        }
+        .info dot { display: block; }
+        .info dot:after { display: none; }
+      }
+      #pop_img {
+        cursor: pointer;
+        padding: 16px;
+        box-sizing: border-box;
+      }
+      #pop_img div {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+        cursor: pointer;
+      }
+      #pop_img img {
+        display: block;
+        cursor: zoom-out;
+      }
+      #pop_img img:not(.big) {
+        max-width: 100%;
+        max-height: 100%;
+        align-self: center;
+        justify-self: center;
+        cursor: zoom-in;
       }
     </style>
   </head>
@@ -68,16 +118,16 @@
           <div class="name y">柯耀耶</div>
           <div class="info b">
             小說作家<br>
-            21歲、女姓、日籍華裔<br>
-            平胸偏瘦體型、188cm<br>
+            21歲<dot></dot>女姓<dot></dot>日籍華裔<br>
+            平胸偏瘦體型<dot></dot>188cm<br>
             <br>
-            髮色：染白髮，天生髮色是黑色<br>
+            髮色：染白髮<dot></dot>天生髮色是黑色<br>
             瞳色：黑色
           </div>
           <div class="info y">
             接體車司機<br>
-            25歲、男性、台灣人<br>
-            中等身材、184cm<br>
+            25歲<dot></dot>男性<dot></dot>台灣人<br>
+            中等身材<dot></dot>184cm<br>
             <br>
             髮色：黑<br>
             瞳色：黑棕
@@ -94,7 +144,8 @@
           <div class="text y">
             常態溫柔型微笑<br>
             工作是體力活，體力很好力氣也不小<br>
-            右手有鳥爪型的燒傷疤
+            右手有鳥爪型的燒傷疤<br>
+            <img src="/baiyeh/imgs/yeh_傷疤.png"/>
           </div>
           <h5>【性格】</h5>
           <div class="text b">
@@ -113,10 +164,29 @@
             無表情的時候一臉無害樣。<br>
             有時候會開地獄玩笑（看人）。<br>
             因為工作的關係有自己一套的價值觀，但時常又因為本能行為。<br>
-            與理念衝突而產生自我矛盾。
+            與理念衝突而產生自我矛盾。<br>
+            很會賴床，如果沒有正事要辦的話，可以在床上躺個半天。
           </div>
         </list>
       </div>
+      <div id="pop_img" class="pop_mask hidden">
+        <div>
+          <img onclick="this.classList.toggle('big')"/>
+        </div>
+      </div>
     </main>
+    <script>
+      find('#pop_img').addEventListener('click', event => {
+        if(event.target.matches('#pop_img, #pop_img > div')) {
+          event.target.closest('#pop_img').classList.add('hidden');
+        }
+      });
+      find_all('.text img').forEach(el => {
+        el.addEventListener('click', () => {
+          find('#pop_img').classList.remove('hidden');
+          find('#pop_img img').src = el.src;
+        });
+      });
+    </script>
   </body>
 </html>
