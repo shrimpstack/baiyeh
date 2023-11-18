@@ -90,6 +90,7 @@ note[t]:hover:before {
   border-radius: 2px;
   width: 240px;
   max-width: max-content;
+  pointer-events: none;
 }
 
 a {
