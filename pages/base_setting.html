@@ -145,7 +145,7 @@
             常態溫柔型微笑<br>
             工作是體力活，體力很好力氣也不小<br>
             右手有鳥爪型的燒傷疤<br>
-            <img src="/baiyeh/imgs/yeh_傷疤.png"/>
+            <img class="click_img" src="/baiyeh/imgs/yeh_傷疤.png"/>
           </div>
           <h5>【性格】</h5>
           <div class="text b">
@@ -167,27 +167,26 @@
             與理念衝突而產生自我矛盾。<br>
             很會賴床，如果沒有正事要辦的話，可以在床上躺個半天。
           </div>
+          <h5>【基本背景】</h5>
+          <div class="text b">
+            父親台灣人，職業軍人。<br>
+            母親中國人，醫生。<br>
+            出生於大陸長安，居住日本秋田，國中時搬到日本的。<br>
+            警校退學，曾經在臺灣偏僻鄉下的派出所偷過槍。<br>
+            在<note t="兩人相識的跑團遭遇事件">事件</note>之後常到臺灣暫時居住。
+          </div>
+          <div class="text y">
+            家裡在南部開禮儀公司及人力業，學生時期會跟著跑場賺零用錢。<br>
+            綽號是「阿耶」另外還有「嗑藥的」（台語諧音）但他不喜歡後者。<br>
+            阿姨級女性業者在過去很喜歡指定他來當人力，還會叫他「小可愛」。<br>
+            不耐煩或很累的時候講話會很地獄，但他是尊重人的。<br>
+            大學畢業之後在人力待了幾個月，因為家庭變故跳槽去北部做接體。<br>
+            在事件之後與搬來臺灣的白恩同居。<br>
+            <br>
+            <a icon="▲" href="/baiyeh/pages/yeh_quotes.html"><span>語錄及行動回顧</span></a>
+          </div>
         </list>
       </div>
-      <div id="pop_img" class="pop_mask hidden">
-        <div>
-          <img onclick="this.classList.toggle('big')"/>
-        </div>
-      </div>
     </main>
-    <script>
-      find('#pop_img').addEventListener('click', event => {
-        if(event.target.matches('#pop_img, #pop_img > div')) {
-          event.target.closest('#pop_img').classList.add('hidden');
-        }
-      });
-      find_all('.text img').forEach(el => {
-        el.addEventListener('click', () => {
-          find('#pop_img').classList.remove('hidden');
-          find('#pop_img img').src = el.src;
-          find('#pop_img img').classList.remove('big');
-        });
-      });
-    </script>
   </body>
 </html>

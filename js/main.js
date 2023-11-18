@@ -11,4 +11,33 @@ window.addEventListener('load', () => {
       }
     });
   }
+  create_pop_img();
 });
+
+function create_pop_img() {
+  window.El_pop_img_view = new_el_to_el('body', 'div#pop_img.pop_mask.hidden');
+  El_pop_img_view.innerHTML = `
+    <div>
+      <img onclick="this.classList.toggle('big')"/>
+    </div>
+  `;
+  window.El_pop_img = find(El_pop_img_view, 'img');
+  El_pop_img_view.addEventListener('click', event => {
+    if(event.target.matches('#pop_img, #pop_img > div')) {
+      El_pop_img_view.classList.add('hidden');
+    }
+  });
+  window.addEventListener('click', event => {
+    if(!event.target.matches('img.click_img')) return;
+    El_pop_img_view.classList.remove('hidden');
+    El_pop_img.src = el.src;
+    El_pop_img.classList.remove('big');
+  });
+  find_all('.text img').forEach(el => {
+    el.addEventListener('click', () => {
+      find('#pop_img').classList.remove('hidden');
+      find('#pop_img img').src = el.src;
+      find('#pop_img img').classList.remove('big');
+    });
+  });
+}

@@ -65,6 +65,49 @@ hr {
   margin: 32px 0;
 }
 
+note {
+  text-decoration: underline;
+  padding: 0 1em 0 0;
+  position: relative;
+}
+note[t] { cursor: help; }
+note:after {
+  content: "註";
+  right: 0;
+  position: absolute;
+  transform: scale(0.7);
+  transform-origin: top;
+}
+note[t]:hover:before {
+  content: attr(t);
+  position: absolute;
+  top: 100%;
+  background: #fff;
+  border: 1px solid #aac;
+  padding: 0 4px;
+  font-size: 14px;
+  font-weight: 300;
+  border-radius: 2px;
+  width: 240px;
+  max-width: max-content;
+}
+
+a {
+  all: unset;
+  text-decoration: underline;
+  cursor: pointer;
+}
+a[icon] {
+  text-decoration: none;
+}
+a[icon] span {
+  text-decoration: underline;
+}
+a[icon]:before {
+  content: attr(icon);
+  margin-right: 4px;
+}
+
 @media (max-width: 767px) {
   body {
     font-size: 14px;
