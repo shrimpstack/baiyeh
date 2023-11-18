@@ -13,9 +13,11 @@
       list {
         display: grid;
         grid-template-columns: minmax(max-content, 25%) 1fr minmax(max-content, 25%);
+        grid-template-rows: auto;
+        grid-auto-rows: 40px;
         align-items: center;
         justify-items: center;
-        gap: 24px 16px;
+        gap: 12px 16px;
       }
       #imgs {
         width: 100%;
@@ -24,6 +26,8 @@
         grid-template-columns: 1fr 1fr;
         justify-items: center;
         gap: 8px 16px;
+        font-weight: 500;
+        font-size: 18px;
       }
       #imgs img {
         width: 300px;
@@ -31,7 +35,7 @@
         border-radius: 8px;
         box-shadow: 2px 2px 3px #0061;
       }
-      h3 {
+      h5 {
         grid-column: 3 span;
         margin: 10px 0 -10px;
         font-weight: 500;
@@ -81,7 +85,7 @@
       }
       @media (max-width: 767px) {
         list {
-          gap: 16px 8px;
+          gap: 0 8px;
         }
         bar {
           height: 16px;
@@ -93,7 +97,7 @@
     <header></header>
     <main id="root">
       <div id="main_content">
-        <h1>基礎量表</h1>
+        <h2>基礎量表</h2>
         <list>
           <div id="imgs">
             <img src="/baiyeh/imgs/bai_1.png"/>
@@ -102,7 +106,7 @@
             <div style="color: #073763">阿耶</div>
           </div>
 
-          <h3>一般</h3>
+          <h5>一般</h5>
           <span>美人</span>
           <bar><bai style="--p:2"></bai><yeh style="--p:2"></yeh></bar>
           <span>不修邊幅</span>

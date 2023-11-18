@@ -3,6 +3,7 @@ header {
   z-index: 1000;
   display: grid;
   grid-template-rows: 100% calc(100vh - 100%);
+  font-weight: 400;
 }
 header #header_switch {
   all: unset;
@@ -27,13 +28,15 @@ header #header_switch {
   }
   header #header_switch:after {
     content: "";
-    width: 20px;
-    height: 13px;
-    background: #3c3c3c;
-    clip-path: polygon(0 0, 0 10%, 47% 100%, 53% 100%, 100% 10%, 100% 0, 90% 0, 50% 80%, 10% 0);
+    width: 24px;
+    height: 18px;
+    background: #677a8b;
+    clip-path: polygon(100%  6%, 94%  0%,  6%  0%,  0%  6%,  6%  12%, 94%  12%, 100%  6%, 100% 50%, 94% 44%,  6% 44%,  0% 50%,  6%  56%, 94%  56%, 100% 50%, 100% 94%, 94% 88%,  6% 88%,  0% 94%,  6% 100%, 94% 100%, 100% 96%);
   }
   header #header_switch.open:after {
-    transform: rotate(180deg);
+    width: 18px;
+    height: 18px;
+    clip-path: polygon(0 0, 10% 0, 50% 40%, 90% 0, 100% 0, 100% 10%, 60% 50%, 100% 90%, 100% 100%, 90% 100%, 50% 60%, 10% 100%, 0 100%, 0 90%, 40% 50%, 0 10%);
   }
   header #header {
     height: 100%;

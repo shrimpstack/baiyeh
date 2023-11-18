@@ -10,6 +10,7 @@ body {
   background: #fafafa;
   font-family: 'Noto Sans TC', Arial, sans-serif;
   font-size: 16px;
+  font-weight: 300;
 }
 
 #root {
@@ -26,7 +27,15 @@ body {
 h1 {
   font-size: 32px;
   font-weight: 700;
+  margin: 0 0 32px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
   margin: 0 0 24px;
+  border-bottom: 1px solid #b3bcd1;
+  padding-bottom: 8px;
 }
 
 @media (max-width: 767px) {
