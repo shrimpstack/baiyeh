@@ -10,41 +10,64 @@
     <script src="/baiyeh/js/universal.js"></script>
     <script src="/baiyeh/js/get.js"></script>
     <style>
-      list {
-        display: grid;
-        grid-template-columns: minmax(max-content, 25%) 1fr minmax(max-content, 25%);
-        grid-template-rows: auto;
-        grid-auto-rows: 40px;
-        align-items: center;
-        justify-items: center;
-        gap: 12px 16px;
-      }
       #imgs {
         width: 100%;
         grid-column: 3 span;
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-items: center;
-        gap: 8px 16px;
+        gap: 8px;
         font-weight: 500;
         font-size: 18px;
       }
       #imgs img {
         width: 300px;
-        max-width: calc(50vw - 24px);
+        max-width: calc(50vw - 20px);
         border-radius: 8px;
         box-shadow: 2px 2px 3px #0061;
       }
+      list {
+        display: grid;
+        grid-template-columns: minmax(max-content, 25%) 1fr minmax(max-content, 25%);
+        grid-template-rows: auto;
+        grid-auto-rows: 36px;
+        align-items: center;
+        justify-items: center;
+        gap: 0 16px;
+        margin-top: 16px;
+      }
       h5 {
         grid-column: 3 span;
-        margin: 10px 0 -10px;
+        margin: 0 0 8px;
         font-weight: 500;
         font-size: 18px;
+        width: 100%;
+        text-align: center;
+        background: #e4edf1;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      h5:after {
+        content: "";
+        display: inline-block;
+        width: 13px;
+        height: 8px;
+        margin: 0 0 2px 8px;
+        background: currentColor;
+        clip-path: polygon(0 0, 0 10%, 47% 100%, 53% 100%, 100% 10%, 100% 0, 90% 0, 50% 80%, 10% 0);
+      }
+      h5.open:after {
+        transform: rotate(180deg);
+      }
+      list h5:not(.open) ~ * {
+        display: none;
       }
       bar {
         position: relative;
         width: 100%;
-        height: 24px;
+        height: 20px;
+        display: flex;
+        align-items: center;
         --c: 5;
         --w: calc(100% / var(--c));
         --w: calc((100% - calc((var(--c) - 1) * 1px)) / var(--c));
@@ -52,11 +75,50 @@
         border-radius: 4px;
         border: 1px solid #aac;
       }
+      bar.c7 {
+        --c: 7;
+      }
+      bar[note] {
+        cursor: help;
+      }
+      bar[note]:after {
+        content: "!";
+        position: absolute;
+        --size: 16px;
+        right: calc(var(--size) / -2);
+        top: calc(var(--size) / -2);
+        background: #fff;
+        width: var(--size);
+        height: var(--size);
+        line-height: var(--size);
+        border: 1px solid #aac;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 12px;
+        color: #aac;
+        font-weight: 900;
+        z-index: 2;
+      }
+      bar[note]:hover:before {
+        content: attr(note);
+        background: #fff;
+        border-radius: 2px;
+        position: absolute;
+        right: 0;
+        width: 100%;
+        line-height: 20px;
+        font-size: 14px;
+        padding: 0 4px;
+        box-sizing: border-box;
+        z-index: 2;
+        text-align: center;
+        outline: 1px solid #aac;
+      }
       bar bai, bar yeh {
         position: absolute;
         margin-left: -6px;
         top: 0;
-        left: calc(100% / var(--c) * (var(--p) - 0.5));
+        left: min(calc(100% / var(--c) * (var(--p) - 0.5)), calc(100% - 6px));
         display: block;
         width: 12px;
         height: 100%;
@@ -73,11 +135,11 @@
         z-index: 1;
         border-radius: 4px 4px 0 0;
       }
-      list span:nth-child(3n + 3) {
+      list span:nth-child(3n + 2) {
         justify-self: end;
         text-align: right;
       }
-      list span:nth-child(3n + 5) {
+      list span:nth-child(3n + 4) {
         justify-self: start;
       }
       @media (min-width: 768px) {
@@ -90,6 +152,9 @@
         bar {
           height: 16px;
         }
+        bar[note]:after {
+          --size: 14px;
+        }
       }
     </style>
   </head>
@@ -98,20 +163,20 @@
     <main id="root">
       <div id="main_content">
         <h2>基礎量表</h2>
-        <list>
-          <div id="imgs">
-            <img src="/baiyeh/imgs/bai_1.png"/>
-            <img src="/baiyeh/imgs/yeh_1.png"/>
-            <div style="color: #8b8b8b">白恩</div>
-            <div style="color: #073763">阿耶</div>
-          </div>
+        <div id="imgs">
+          <img src="/baiyeh/imgs/bai_1.png"/>
+          <img src="/baiyeh/imgs/yeh_1.png"/>
+          <div style="color: #8b8b8b">白恩</div>
+          <div style="color: #073763">阿耶</div>
+        </div>
 
-          <h5>一般</h5>
+        <list>
+          <h5 class="open" onclick="this.classList.toggle('open')">設定問卷</h5>
           <span>美人</span>
           <bar><bai style="--p:2"></bai><yeh style="--p:2"></yeh></bar>
           <span>不修邊幅</span>
 
-          <span>成熟</span>
+          <span>長相成熟</span>
           <bar><bai style="--p:3"></bai><yeh style="--p:3"></yeh></bar>
           <span>童顏</span>
 
@@ -119,9 +184,9 @@
           <bar><bai style="--p:4"></bai><yeh style="--p:3"></yeh></bar>
           <span>膚色偏白</span>
 
-          <span>健壯</span>
+          <span>身材健壯</span>
           <bar><bai style="--p:4"></bai><yeh style="--p:2"></yeh></bar>
-          <span>纖細</span>
+          <span>身材纖細</span>
 
           <span>體溫偏高</span>
           <bar><bai style="--p:1"></bai><yeh style="--p:2"></yeh></bar>
@@ -187,17 +252,143 @@
           <bar><bai style="--p:3"></bai><yeh style="--p:2"></yeh></bar>
           <span>被動物<br>討厭</span>
 
-          <span>XX</span>
-          <bar><bai style="--p:0"></bai><yeh style="--p:0"></yeh></bar>
-          <span>XX</span>
+          <span>食量大</span>
+          <bar><bai style="--p:3"></bai><yeh style="--p:2"></yeh></bar>
+          <span>食量小</span>
 
-          <span>XX</span>
-          <bar><bai style="--p:0"></bai><yeh style="--p:0"></yeh></bar>
-          <span>XX</span>
+          <span>挑食</span>
+          <bar><bai style="--p:4"></bai><yeh style="--p:5"></yeh></bar>
+          <span>不挑食</span>
 
-          <span>XX</span>
-          <bar><bai style="--p:0"></bai><yeh style="--p:0"></yeh></bar>
-          <span>XX</span>
+          <span>擅長料理</span>
+          <bar><bai style="--p:3"></bai><yeh style="--p:3"></yeh></bar>
+          <span>不擅長<br>料理</span>
+
+          <span>早睡</span>
+          <bar note="阿耶工作時間不固定，作息不穩定"><bai style="--p:5"></bai></bar>
+          <span>熬夜</span>
+
+          <span>沒有起床氣</span>
+          <bar><bai style="--p:1"></bai><yeh style="--p:2"></yeh></bar>
+          <span>有起床氣</span>
+
+          <span>酒量好</span>
+          <bar><bai style="--p:5.5"></bai><yeh style="--p:2"></yeh></bar>
+          <span>酒量不好</span>
+
+          <span>富有</span>
+          <bar><bai style="--p:2"></bai><yeh style="--p:3"></yeh></bar>
+          <span>貧乏</span>
+
+          <span>浪費家</span>
+          <bar><bai style="--p:3"></bai><yeh style="--p:3"></yeh></bar>
+          <span>吝嗇</span>
+
+          <span>朋友很多</span>
+          <bar><bai style="--p:5.5"></bai><yeh style="--p:3"></yeh></bar>
+          <span>朋友很少</span>
+
+          <span>家族<br>關係好</span>
+          <bar><bai style="--p:3"></bai><yeh style="--p:2"></yeh></bar>
+          <span>家族<br>關係不好</span>
+
+          <span>戀愛<br>經驗多</span>
+          <bar><bai style="--p:5.5"></bai><yeh style="--p:4"></yeh></bar>
+          <span>戀愛<br>經驗少</span>
+
+          <span>佔有欲高</span>
+          <bar><bai style="--p:5"></bai><yeh style="--p:2"></yeh></bar>
+          <span>佔有欲低</span>
+
+          <span>接吻拿手</span>
+          <bar note="白恩沒接吻經驗所以放最右"><bai style="--p:5.5"></bai><yeh style="--p:4"></yeh></bar>
+          <span>接吻<br>不拿手</span>
+
+          <span>性慾高</span>
+          <bar><bai style="--p:3"></bai><yeh style="--p:3"></yeh></bar>
+          <span>性慾低</span>
+
+          <span>性經驗多</span>
+          <bar><bai style="--p:5.5"></bai><yeh style="--p:5.5"></yeh></bar>
+          <span>性經驗少</span>
+
+          <span>過去沉重</span>
+          <bar><bai style="--p:3"></bai><yeh style="--p:4"></yeh></bar>
+          <span>過去和平</span>
+
+          <span>現在<br>幸福的</span>
+          <bar><bai style="--p:5"></bai><yeh style="--p:3"></yeh></bar>
+          <span>不幸的</span>
+        </list>
+        <list>
+          <h5 class="open" onclick="this.classList.toggle('open')">組合表單 - 特質檢查表</h5>
+          <span>外向</span>
+          <bar class="c7"><bai style="--p:7"></bai><yeh style="--p:2"></yeh></bar>
+          <span>內向</span>
+
+          <span>衝動</span>
+          <bar class="c7"><bai style="--p:2"></bai><yeh style="--p:4"></yeh></bar>
+          <span>冷靜</span>
+
+          <span>感性</span>
+          <bar class="c7"><bai style="--p:4"></bai><yeh style="--p:4"></yeh></bar>
+          <span>理性</span>
+
+          <span>積極</span>
+          <bar class="c7"><bai style="--p:2"></bai><yeh style="--p:3"></yeh></bar>
+          <span>消極</span>
+
+          <span>坦率</span>
+          <bar class="c7"><bai style="--p:7"></bai><yeh style="--p:2"></yeh></bar>
+          <span>含蓄</span>
+
+          <span>保守</span>
+          <bar class="c7"><bai style="--p:5"></bai><yeh style="--p:5"></yeh></bar>
+          <span>開放</span>
+
+          <span>強硬</span>
+          <bar class="c7"><bai style="--p:2"></bai><yeh style="--p:6"></yeh></bar>
+          <span>溫和</span>
+
+          <span>放縱</span>
+          <bar class="c7"><bai style="--p:4"></bai><yeh style="--p:5"></yeh></bar>
+          <span>自律</span>
+
+          <span>勇敢</span>
+          <bar class="c7" note="白恩在不同情況下剛好兩個極端"><bai style="--p:1"></bai><bai style="--p:7"></bai><yeh style="--p:2"></yeh></bar>
+          <span>膽小</span>
+
+          <span>隨興</span>
+          <bar class="c7"><bai style="--p:3"></bai><yeh style="--p:2"></yeh></bar>
+          <span>嚴謹</span>
+
+          <span>遲鈍</span>
+          <bar class="c7"><bai style="--p:2"></bai><yeh style="--p:5"></yeh></bar>
+          <span>敏感</span>
+
+          <span>利己</span>
+          <bar class="c7"><bai style="--p:7"></bai><yeh style="--p:4"></yeh></bar>
+          <span>利他</span>
+
+          <span>自信</span>
+          <bar class="c7"><bai style="--p:7"></bai><yeh style="--p:3"></yeh></bar>
+          <span>自卑</span>
+
+          <span>樂觀</span>
+          <bar class="c7"><bai style="--p:5"></bai><yeh style="--p:3"></yeh></bar>
+          <span>悲觀</span>
+
+          <span>固執</span>
+          <bar class="c7"><bai style="--p:5"></bai><yeh style="--p:3"></yeh></bar>
+          <span>隨和</span>
+
+          <span>老實</span>
+          <bar class="c7"><bai style="--p:3"></bai><yeh style="--p:1"></yeh></bar>
+          <span>狡猾</span>
+
+          <span>幼稚</span>
+          <bar class="c7"><bai style="--p:3"></bai><yeh style="--p:5"></yeh></bar>
+          <span>成熟</span>
         </list>
       </div>
     </main>

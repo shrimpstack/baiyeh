@@ -4,9 +4,14 @@ header {
   display: grid;
   grid-template-rows: 100% calc(100vh - 100%);
   font-weight: 400;
+  background: linear-gradient(90deg, #f2f4f5, #f8f9f9, #f2f4f5);
 }
 header #header_switch {
   all: unset;
+}
+header #header {
+  height: 100%;
+  display: flex;
 }
 @media (max-width: 767px) {
   header:after {
@@ -39,14 +44,12 @@ header #header_switch {
     clip-path: polygon(0 0, 10% 0, 50% 40%, 90% 0, 100% 0, 100% 10%, 60% 50%, 100% 90%, 100% 100%, 90% 100%, 50% 60%, 10% 100%, 0 100%, 0 90%, 40% 50%, 0 10%);
   }
   header #header {
-    height: 100%;
-    background: linear-gradient(90deg, #fafafa, #fbfbfb, #fafafa);
-    display: flex;
     flex-direction: column;
     padding: 16px 8px;
     gap: 16px;
     box-sizing: border-box;
     overflow: auto;
+    background: #fafafa;
   }
   header #header_switch:not(.open) + #header {
     display: none;
@@ -80,9 +83,6 @@ header #header_switch {
     display: none;
   }
   header #header {
-    height: 100%;
-    background: linear-gradient(90deg, #fafafa, #fbfbfb, #fafafa);
-    display: flex;
     justify-content: center;
     position: relative;
     white-space: nowrap;
