@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <title>白耶</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/baiyeh/css/main.css">
+    <link rel="stylesheet" href="/baiyeh/css/header.css">
+    <script src="/baiyeh/js/main.js"></script>
+    <script src="/baiyeh/js/universal.js"></script>
+    <script src="/baiyeh/js/get.js"></script>
+    <style>
+      list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: stretch;
+        gap: 16px;
+        font-size: 18px;
+        font-weight: 400;
+      }
+      list .b { color: #434343; }
+      list .y { color: #073763; }
+      .main_img, .name {
+        justify-self: center;
+      }
+      .name {
+        font-size: 20px;
+        font-weight: 500;
+      }
+      h5 {
+        grid-column: 2 span;
+        margin: 16px 0 0;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 400;
+        letter-spacing: 10px;
+      }
+      h5:before { content: " "; padding-left: 10px; }
+      .info {
+        text-align: center;
+      }
+      .text {
+        padding: 0 16px;
+      }
+      .info, .text { position: relative; }
+      .info.b:after, .text.b:after {
+        content: "";
+        position: absolute;
+        right: -8px;
+        top: 0;
+        border-left: 1px solid #aaa;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <main id="root">
+      <div id="main_content">
+        <h2>基本設定</h2>
+        <h3>世界觀</h3>
+        <div>臺灣、平行現代（當今2023）</div>
+        <hr/>
+        <list>
+          <img class="main_img" src="/baiyeh/imgs/bai_2.png"/>
+          <img class="main_img" src="/baiyeh/imgs/yeh_2.png"/>
+          <div class="name b">白恩</div>
+          <div class="name y">柯耀耶</div>
+          <div class="info b">
+            小說作家<br>
+            21歲、女姓、日籍華裔<br>
+            平胸偏瘦體型、188cm<br>
+            <br>
+            髮色：染白髮，天生髮色是黑色<br>
+            瞳色：黑色
+          </div>
+          <div class="info y">
+            接體車司機<br>
+            25歲、男性、台灣人<br>
+            中等身材、184cm<br>
+            <br>
+            髮色：黑<br>
+            瞳色：黑棕
+          </div>
+          <h5>【特徵】</h5>
+          <div class="text b">
+            頭髮遮住耳朵<br>
+            皮膚偏白一點（沒到慘白）<br>
+            萬年無表情（▄ _ ▄），喜怒哀樂不會顯現於表情上<br>
+            連普通站姿都看起來很沒個性<br>
+            像機器人一樣在旁邊待機<br>
+            天生內分泌失調，有時需要吃安眠藥、鎮定劑
+          </div>
+          <div class="text y">
+            常態溫柔型微笑<br>
+            工作是體力活，體力很好力氣也不小<br>
+            右手有鳥爪型的燒傷疤
+          </div>
+          <h5>【性格】</h5>
+          <div class="text b">
+            利他主義，通常會很無視自我，需要關注自己狀態或想法的時候會很貶低自己。<br>
+            對某些特定人事物很執著，但除外的事物很容易放棄。<br>
+            通常做事有事先計畫會比較安心，超過精神負荷又會。<br>
+            變得很衝動行事，然後再邊做邊後悔。<br>
+            對正在做的事情很難收手。<br>
+            稍微有點懶人。<br>
+            一些些保護欲。
+          </div>
+          <div class="text y">
+            坦率、憨厚、正直。<br>
+            本質上是個溫柔的人。<br>
+            個性很好，行為端正且隨和，做事細心。<br>
+            無表情的時候一臉無害樣。<br>
+            有時候會開地獄玩笑（看人）。<br>
+            因為工作的關係有自己一套的價值觀，但時常又因為本能行為。<br>
+            與理念衝突而產生自我矛盾。
+          </div>
+        </list>
+      </div>
+    </main>
+  </body>
+</html>
