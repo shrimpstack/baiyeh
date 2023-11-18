@@ -109,6 +109,14 @@ a[icon]:before {
   margin-right: 4px;
 }
 
+.fill_iframe {
+  all: unset;
+  display: block;
+  width: 800px;
+  margin: 0 auto;
+  height: 100%;
+}
+
 @media (max-width: 767px) {
   body {
     font-size: 14px;
