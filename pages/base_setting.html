@@ -58,7 +58,7 @@
       .text img {
         max-width: 100%;
         margin: 16px 0;
-        cursor: pointer;
+        cursor: zoom-in;
       }
       @media (max-width: 767px) {
         list {
@@ -185,6 +185,7 @@
         el.addEventListener('click', () => {
           find('#pop_img').classList.remove('hidden');
           find('#pop_img img').src = el.src;
+          find('#pop_img img').classList.remove('big');
         });
       });
     </script>
