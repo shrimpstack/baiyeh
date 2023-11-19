@@ -10,6 +10,9 @@
     <script src="/baiyeh/js/universal.js"></script>
     <script src="/baiyeh/js/get.js"></script>
     <style>
+      #main_content {
+        max-width: 1200px;
+      }
       list {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -46,6 +49,17 @@
       .text {
         padding: 0 16px;
       }
+      .text.fill {
+        text-align: center;
+        grid-column: 2 span;
+      }
+      h6 {
+        all: unset;
+        display: block;
+        color: #000;
+        font-size: 20px;
+        margin-bottom: 8px;
+      }
       .info, .text { position: relative; }
       .info.b:after, .text.b:after {
         content: "";
@@ -58,7 +72,6 @@
       .text img {
         max-width: 100%;
         margin: 16px 0;
-        cursor: zoom-in;
       }
       @media (max-width: 767px) {
         list {
@@ -75,31 +88,6 @@
         }
         .info dot { display: block; }
         .info dot:after { display: none; }
-      }
-      #pop_img {
-        cursor: pointer;
-        padding: 16px;
-        box-sizing: border-box;
-      }
-      #pop_img div {
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 100%;
-        cursor: pointer;
-      }
-      #pop_img img {
-        display: block;
-        cursor: zoom-out;
-      }
-      #pop_img img:not(.big) {
-        max-width: 100%;
-        max-height: 100%;
-        align-self: center;
-        justify-self: center;
-        cursor: zoom-in;
       }
     </style>
   </head>
@@ -183,6 +171,40 @@
             在事件之後與搬來臺灣的白恩同居。<br>
             <br>
             <a icon="▲" href="/baiyeh/pages/yeh_quotes.html"><span>語錄及行動回顧</span></a>
+          </div>
+          <h5>【看法及相處變化 - 簡略版】</h5>
+          <div class="text b">
+            <h6>初識至事件結束：奇怪的人 > 普通的幫助 > 想見的人</h6>
+            覺得耀耶是奇怪的人，好像很擅長與人交談，覺得不用麻煩對方所以拒絕閒聊。<br>
+            認為自己性命不重要，乾脆用來幫助同樣遇難的對方，總是在對方前面阻擋危險。<br>
+            將其當作暫時的保護對象，推遲了原本目的是尋死一事。<br>
+            隨著事件推進，在分散之後發現自己還想再見到對方，改變了原先打算犧牲自己性命的選擇，但也因為沒選擇犧牲而陷入自責，變相開始過度保護對方。
+            <hr>
+          </div>
+          <div class="text y">
+            <h6>初識至事件結束：不好相處 > 在意  > 重要的人</h6>
+            在事件發生時將剛認識的白恩誤認為男性，不怎麼講話有點不好相處。<br>
+            隨著事件進程從質疑及不信任逐漸轉為執意，最後甚至是願意以看似會犧牲的方式來救包含白恩在內的遇難者。
+            <hr>
+            <h6>事件後至交往前：朋友 > 動情 > 交往</h6>
+            約了白恩與另一名倖存者在臺灣環島看海，旅途結束當天才得知對方是女性，覺得很尷尬也不好意思。<br>
+            開始發現自己有點想和白恩拉近關係，但對這種跨國的友情並不看好，所以也沒有進一步的動作，就只是趁著對方還在臺灣的時間偶爾聚餐，甚至認為大家在最後也只會互相成為人生中的過客而已。<br>
+            在白恩回國後才感到一絲失落，這才發現自己似乎對對方動了情，可他也只是選擇放棄，想讓這份感情淡掉。<br>
+            原以為這段關係就這樣結束，卻在隔年又收到對方打算來臺的訊息，才意識到自己根本沒有把這份情感放下，也決定好要試著追看看對方。<br>
+            這之後兩人照約定一起到日本去玩，原計劃在最後一天向對方告白，卻反過來在中途被搶先，兩人也正式成為情侶，並在旅途結束後又一同回到臺灣。
+            <hr>
+            <h6>交往後至今</h6>
+            覺得白恩很寵溺自己，說甚麼對方都好，也不會逼他起床跟碎唸。<br>
+            儘管已經是現實中最親的對象，可又在同時覺得與對方的距離有點遙遠，摸不透的感覺。<br>
+            在發生了某些事情後發現自己依舊不了解白恩，也為此感到困惑和挫折，更希望對方能信任並依靠自己。<br>
+            仍然抱有一絲看見白恩微笑的期望（不會實現）。<br>
+            覺得白恩的個性很特別，雖然有種說不上的微妙，但相處起來很舒服。<br>
+            各種親暱的舉動都能讓他安心。
+          </div>
+          <h5>【其他】</h5>
+          <div class="text fill">
+            身高差參考 - 會因為鞋子不同的關係而改變明顯程度<br>
+            <img src="/baiyeh/imgs/height.png"/>
           </div>
         </list>
       </div>
