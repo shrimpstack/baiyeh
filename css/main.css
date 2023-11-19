@@ -1,6 +1,9 @@
 @import url(./notosanstc.css);
 @import url(./grid.css);
 
+/* ================================ */
+/*               基本               */
+/* ================================ */
 body {
   margin: 0;
   height: 100vh;
@@ -13,7 +16,6 @@ body {
   font-size: 16px;
   font-weight: 300;
 }
-
 #root {
   overflow: auto;
 }
@@ -24,7 +26,18 @@ body {
   width: 100%;
   max-width: 900px;
 }
+@media (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+  #main_content {
+    padding: 16px 8px 64px;
+  }
+}
 
+/* ================================ */
+/*             彈跳視窗             */
+/* ================================ */
 .pop_mask {
   overflow: hidden;
   position: absolute;
@@ -39,33 +52,40 @@ body {
   display: none;
 }
 
+/* ================================ */
+/*              各標題              */
+/* ================================ */
 h1 {
   font-size: 32px;
   font-weight: 700;
   margin: 0 0 32px;
 }
-
 h2 {
   font-size: 24px;
   font-weight: 500;
   margin: 0 0 24px;
-  border-bottom: 1px solid #b3bcd1;
+  border-bottom: 1px solid #aaa;
   padding-bottom: 8px;
 }
-
 h3 {
   font-size: 20px;
   font-weight: 500;
   margin: 0 0 8px;
 }
 
+/* ================================ */
+/*              分隔線              */
+/* ================================ */
 hr {
   all: unset;
-  border-bottom: 1px solid #b3bcd1;
+  border-bottom: 1px solid #aaa;
   display: block;
   margin: 32px 0;
 }
 
+/* ================================ */
+/*             文字備註             */
+/* ================================ */
 note {
   text-decoration: underline;
   padding: 0 1em 0 0;
@@ -94,6 +114,9 @@ note[t]:hover:before {
   pointer-events: none;
 }
 
+/* ================================ */
+/*              超連結              */
+/* ================================ */
 a {
   all: unset;
   text-decoration: underline;
@@ -110,21 +133,15 @@ a[icon]:before {
   margin-right: 4px;
 }
 
+/* ================================ */
+/*               嵌入               */
+/* ================================ */
 .fill_iframe {
   all: unset;
   display: block;
   width: 800px;
   margin: 0 auto;
   height: 100%;
-}
-
-@media (max-width: 767px) {
-  body {
-    font-size: 14px;
-  }
-  #main_content {
-    padding: 16px 8px 64px;
-  }
 }
 
 /* ================================ */
