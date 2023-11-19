@@ -1,4 +1,5 @@
 @import url(./notosanstc.css);
+@import url(./grid.css);
 
 body {
   margin: 0;
@@ -124,4 +125,39 @@ a[icon]:before {
   #main_content {
     padding: 16px 8px 64px;
   }
+}
+
+/* ================================ */
+/*             圖片預覽             */
+/* ================================ */
+img.click_img {
+  cursor: zoom-in;
+}
+#pop_img:not(.hidden) {
+  cursor: pointer;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#pop_img div {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  cursor: pointer;
+}
+#pop_img img {
+  display: block;
+  cursor: zoom-out;
+}
+#pop_img img:not(.big) {
+  max-width: 100%;
+  max-height: 100%;
+  align-self: center;
+  justify-self: center;
+  cursor: zoom-in;
 }

@@ -30,14 +30,7 @@ function create_pop_img() {
   window.addEventListener('click', event => {
     if(!event.target.matches('img.click_img')) return;
     El_pop_img_view.classList.remove('hidden');
-    El_pop_img.src = el.src;
+    El_pop_img.src = event.target.src;
     El_pop_img.classList.remove('big');
-  });
-  find_all('.text img').forEach(el => {
-    el.addEventListener('click', () => {
-      find('#pop_img').classList.remove('hidden');
-      find('#pop_img img').src = el.src;
-      find('#pop_img img').classList.remove('big');
-    });
   });
 }
