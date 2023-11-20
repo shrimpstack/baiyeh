@@ -1,5 +1,10 @@
 window.addEventListener('load', () => {
-  find('head title').innerHTML = "白耶";
+  find('head title').innerHTML = "白耶設定整理";
+  new_el_to_el('head', 'link', {
+    rel: 'icon',
+    href: '/baiyeh/favicon.png',
+    type: 'image/png',
+  });
   let header_el = find('header');
   if(header_el) {
     get('/baiyeh/header.html').then(res => {

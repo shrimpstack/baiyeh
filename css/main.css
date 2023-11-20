@@ -56,9 +56,16 @@ body {
 /*              各標題              */
 /* ================================ */
 h1 {
+  margin: 0 auto;
+  width: max-content;
+  color: transparent;
+  background: linear-gradient(#9290b7 20%, #b3b3db 40%, #686887 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  letter-spacing: 4px;
   font-size: 32px;
-  font-weight: 700;
-  margin: 0 0 32px;
+  font-weight: 500;
+  transform: scaleY(0.95);
 }
 h2 {
   font-size: 24px;

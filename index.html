@@ -9,12 +9,125 @@
     <script src="/baiyeh/js/main.js"></script>
     <script src="/baiyeh/js/universal.js"></script>
     <script src="/baiyeh/js/get.js"></script>
+    <style>
+      #home_info {
+        position: relative;
+        color: #62628f;
+        font-size: 20px;
+        text-align: center;
+        margin: 64px auto 120px;
+      }
+      #home_img {
+        display: block;
+        margin: 0 auto;
+        max-width: 95%;
+      }
+      h1 {
+        margin-bottom: 16px;
+      }
+      h5 {
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        flex: 100%;
+        margin: 0;
+        font-size: 24px;
+        font-weight: 400;
+        text-wrap: nowrap;
+        color: #62628f;
+      }
+      h5:before, h5:after {
+        content: "";
+        border-top: 2px solid #aac;
+        width: 100px;
+      }
+      .link_list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+        max-width: 600px;
+        margin: 80px auto;
+        padding: 0 8px;
+      }
+      .link_list a {
+        all: unset;
+        position: relative;
+        background: linear-gradient(45deg, #f0ebf7, #fff 48px);
+        color: #7170a1;
+        font-size: 18px;
+        padding: 8px 20px 12px 16px;
+        line-height: 1;
+        border-radius: 4px;
+        cursor: pointer;
+        border: 1px solid;
+      }
+      .link_list a:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border: inherit;
+        position: absolute;
+        left: -5px;
+        top: -5px;
+        border-radius: inherit;
+      }
+      @media (max-width: 767px) {
+        h1 {
+          font-size: 24px;
+        }
+        #home_info {
+          font-size: 16px;
+          margin: 24px auto 80px;
+        }
+        h5 {
+          font-size: 20px;
+        }
+        .link_list {
+          margin: 60px auto;
+        }
+        .link_list a {
+          font-size: 16px;
+        }
+      }
+    </style>
   </head>
   <body>
     <header></header>
     <main id="root">
       <div id="main_content">
-        <h1>首頁還不知道放甚麼</h1>
+        <div id="home_info">
+          <img id="home_img" src="/baiyeh/imgs/home.png"/>
+          <h1>白耶設定整理</h1>
+          <div>
+            說明說明說明說明說明說明說明說明說明說明說明<br>
+            說明說明說明說明說明說明<br>
+            說明說明說明說明說明說明說明說明
+          </div>
+        </div>
+        <div class="link_list">
+          <h5>基本</h5>
+          <a href="/baiyeh/pages/base_setting.html">基本設定</a>
+          <a href="/baiyeh/pages/base_scale.html">兩人差異量表</a>
+          <a>本篇簡介</a>
+          <a>時間軸</a>
+          <a>互動設定</a>
+          <a>ASDFASDF</a>
+        </div>
+        <div class="link_list">
+          <h5>一頁設定</h5>
+          <a>繪圖委託用</a>
+          <a>文字委託用</a>
+          <a>GOOGLE文件版</a>
+        </div>
+        <div class="link_list">
+          <h5>其他</h5>
+          <a>圖片雲端資料夾</a>
+          <a>GOOGLE文件列表</a>
+          <a>初設噗串</a>
+        </div>
       </div>
     </main>
   </body>
