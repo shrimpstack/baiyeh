@@ -30,6 +30,7 @@ header #header {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
   }
   header #header_switch:after {
     content: "";
