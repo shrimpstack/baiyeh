@@ -47,18 +47,12 @@
       }
       .info dot:after { content: "、"; }
       .text {
-        padding: 0 16px;
+        padding: 16px;
       }
       .text.fill {
         text-align: center;
         grid-column: 2 span;
-      }
-      h6 {
-        all: unset;
-        display: block;
-        color: #000;
-        font-size: 20px;
-        margin-bottom: 8px;
+        padding: 0 16px;
       }
       .info, .text { position: relative; }
       .info.b:after, .text.b:after {
@@ -73,9 +67,63 @@
         max-width: 100%;
         margin: 16px 0;
       }
-      .text hr {
-        margin: 16px 0;
+      /* ================================ */
+      /*             看法區塊             */
+      /* ================================ */
+      .thoughts {
+        grid-column: 2 span;
+        margin: 0 auto;
       }
+      .thoughts .note {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 0 16px;
+      }
+      .thoughts ul {
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .thoughts h6 {
+        color: #000;
+        font-size: unset;
+        font-weight: 400;
+        margin: 24px 0 8px;
+        text-align: center;
+        background: #0061;
+        border-radius: 4px;
+      }
+      .thoughts h6:first-of-type { margin-top: 8px; }
+      .thoughts ul li {
+        display: block;
+        position: relative;
+        display: block;
+        padding-left: 24px;
+      }
+      .thoughts ul li:before {
+        content: "";
+        position: absolute;
+        left: 8px;
+        height: calc(100% + 4px);
+        width: 1px;
+        background: #aaa;
+      }
+      .thoughts ul li:last-child:before {
+        height: calc(100% - 8px);
+      }
+      .thoughts ul li:last-child:after {
+        content: "";
+        position: absolute;
+        left: 3px;
+        bottom: 0;
+        width: 11px;
+        height: 10px;
+        background: #666;
+        clip-path: polygon(0 0, 50% 50%, 100% 0, 50% 100%);
+      }
+      
       @media (max-width: 767px) {
         list {
           font-size: 16px;
@@ -85,12 +133,19 @@
         }
         .text {
           grid-column: 2 span;
+          padding: 0 16px;
+        }
+        .thoughts h6 {
+          margin: 16px 0 4px;
         }
         .info.b:after, .text.b:after {
           display: none;
         }
         .info dot { display: block; }
         .info dot:after { display: none; }
+        .thoughts {
+          padding: 0 8px;
+        }
       }
     </style>
   </head>
@@ -100,7 +155,11 @@
       <div id="main_content">
         <h2>基本設定</h2>
         <h3>世界觀</h3>
-        <div>臺灣、平行現代（當今2023）</div>
+        <div>
+          臺灣、平行現代（當今2023）<br>
+          包含非現實生物、怪物<br>
+          下方描述中所提及的「事件」為兩人相識的跑團遭遇事件
+        </div>
         <hr/>
         <list>
           <img class="main_img" src="/baiyeh/imgs/bai_2.png"/>
@@ -125,15 +184,16 @@
           </div>
           <h5>【特徵】</h5>
           <div class="text b">
-            頭髮遮住耳朵<br>
+            長相中性，頭髮遮住耳朵<br>
             皮膚偏白一點（沒到慘白）<br>
-            萬年無表情（▄ _ ▄），喜怒哀樂不會顯現於表情上<br>
+            萬年無表情（▄ _ ▄），喜怒哀樂不會顯現於臉上<br>
             連普通站姿都看起來很沒個性<br>
             像機器人一樣在旁邊待機<br>
             天生內分泌失調，有時需要吃安眠藥、鎮定劑
           </div>
           <div class="text y">
             長相端正，常態溫柔型微笑<br>
+            無表情的時候一臉無害樣<br>
             工作是體力活，體力很好力氣也不小<br>
             右手有鳥爪型的燒傷疤（事件中受傷）<br>
             <img class="click_img" src="/baiyeh/imgs/yeh_傷疤.png"/>
@@ -151,7 +211,6 @@
             坦率、憨厚、正直。<br>
             本質上是個溫柔的人。<br>
             個性很好，行為端正且隨和，做事細心。<br>
-            無表情的時候一臉無害樣。<br>
             有時候會開地獄玩笑（看人）。<br>
             因為工作的關係有自己一套的價值觀，但時常又因為本能行為與理念衝突而產生自我矛盾。<br>
             很會賴床，如果沒有正事要辦的話，可以在床上躺個半天。
@@ -169,46 +228,50 @@
             綽號是「阿耶」另外還有「嗑藥的」（台語諧音）但他不喜歡後者。<br>
             阿姨級女性業者在過去很喜歡指定他來當人力，還會叫他「小可愛」。<br>
             不耐煩或很累的時候講話會很地獄，但他是尊重人的。<br>
-            大學畢業之後在人力待了幾個月，因為家庭變故跳槽去北部做接體。<br>
+            大學畢業後家中遭逢變故，因此北上在父親朋友開的人力公司工作，幾個月後又跳槽改做接體。<br>
             在事件之後與搬來臺灣的白恩同居。<br>
             <br>
             <a icon="▲" href="/baiyeh/pages/yeh_quotes.html"><span>語錄及行動回顧</span></a>
           </div>
-          <h5>【看法及相處變化 - 簡略版】</h5>
-          <div class="text b">
-            <h6>初識至事件結束：奇怪的人 > 普通的幫助 > 想見的人</h6>
-            覺得耀耶是奇怪的人，好像很擅長與人交談，覺得不用麻煩對方所以拒絕閒聊。<br>
-            認為自己性命不重要，乾脆用來幫助同樣遇難的對方，總是在對方前面阻擋危險。<br>
-            將其當作暫時的保護對象，推遲了原本目的是尋死一事。<br>
-            隨著事件推進，在分散之後發現自己還想再見到對方，改變了原先打算犧牲自己性命的選擇，但也因為沒選擇犧牲而陷入自責，變相開始過度保護對方。
-            <hr>
-            <h6>事件後至交往前：恩人、愧疚 > 愛慕 > 追求</h6>
-            被阿耶救了一命，對阿耶很感謝但還是帶著愧疚。<br>
-            環島看海的時候意識到在肢體碰觸這方面上對阿耶的戒心變低，也因為阿耶的關係試著喜歡海。<br>
-            嘗試主動聯繫和相約見面，一次次互動中慢慢確認了自己對阿耶的心意。<br>
-            抱持這種心情回日本打算把搞砸的事情處理好，才發現自己很需要對方，於是在訂下的期限中途就回到台灣了，待在阿耶身邊也確實好轉了很多。<br>
-            日本旅遊時本來以會被拒絕的前提準備在最後一天告白，最後卻因為氣氛的關係提前告訴阿耶，確認彼此的心意後正式成為情侶，並在旅途結束後一起回到臺灣。
-            <hr>
-          </div>
-          <div class="text y">
-            <h6>初識至事件結束：不好相處 > 在意  > 重要的人</h6>
-            在事件發生時將剛認識的白恩誤認為男性，不怎麼講話有點不好相處。<br>
-            隨著事件進程從質疑及不信任逐漸轉為執意，最後甚至是願意以看似會犧牲的方式來救包含白恩在內的遇難者。
-            <hr>
-            <h6>事件後至交往前：朋友 > 動情 > 交往</h6>
-            約了白恩與另一名倖存者在臺灣環島看海，旅途結束當天才得知對方是女性，覺得很尷尬也不好意思。<br>
-            開始發現自己有點想和白恩拉近關係，但對這種跨國的友情並不看好，所以也沒有進一步的動作，就只是趁著對方還在臺灣的時間偶爾聚餐，甚至認為大家在最後也只會互相成為人生中的過客而已。<br>
-            在白恩回國後才感到一絲失落，這才發現自己似乎對對方動了情，可他也只是選擇放棄，想讓這份感情淡掉。<br>
-            原以為這段關係就這樣結束，卻在隔年又收到對方打算來臺的訊息，才意識到自己根本沒有把這份情感放下，也決定好要試著追看看對方。<br>
-            這之後兩人照約定一起到日本去玩，原計劃在最後一天向對方告白，卻反過來在中途被搶先，兩人也正式成為情侶，並在旅途結束後又一同回到臺灣。
-            <hr>
-            <h6>交往後至今</h6>
-            覺得白恩很寵溺自己，說甚麼對方都好，也不會逼他起床跟碎唸。<br>
-            儘管已經是現實中最親的對象，可又在同時覺得與對方的距離有點遙遠，摸不透的感覺。<br>
-            在發生了某些事情後發現自己依舊不了解白恩，也為此感到困惑和挫折，更希望對方能信任並依靠自己。<br>
-            仍然抱有一絲看見白恩微笑的期望（不會實現）。<br>
-            覺得白恩的個性很特別，雖然有種說不上的微妙，但相處起來很舒服。<br>
-            各種親暱的舉動都能讓他安心。
+          <h5>【看法 簡化版】</h5>
+          <div class="thoughts">
+            <div class="note">
+              <li class="b">灰色表示白恩對阿耶</li>
+              <li class="y">藍色表示阿耶對白恩</li>
+            </div>
+            <h6>事件開頭初識</h6>
+            <ul>
+              <li class="b">覺得阿耶是奇怪的人。</li>
+              <li class="b">幫助同樣遇難的對方，總是在對方前面阻擋危險。</li>
+              <li class="y">將白恩誤認為男性，不怎麼講話有點不好相處。</li>
+              <li class="y">從質疑及不信任逐漸轉為執意。</li>
+            </ul>
+            <h6>事件中後期</h6>
+            <ul>
+              <li class="y">中途分散時將對方視為要找到的重要對象。</li>
+              <li class="b">分散之後發現自己還想再見到對方。</li>
+              <li class="y">被阿耶救了一命，對對方很感謝但還是帶著愧疚。</li>
+              <li class="b">得知對方是女性，覺得很尷尬也不好意思。</li>
+              <li class="y">嘗試主動聯繫和相約見面，確認了自己對阿耶的心意。</li>
+            </ul>
+            <h6>白恩回日本</h6>
+            <ul>
+              <li class="y">開始發現自己想和對方拉近關係，但對這種跨國的友情並不看好，所以放棄進一步打算。</li>
+              <li class="y">感到失落的同時發現自己似乎對白恩動了情，但依舊選擇放棄，想讓這份感情淡掉。</li>
+              <li class="b">回日本獨自一人才發現自己精神上很需要對方，在訂下的期限中途就又來到台灣了。</li>
+            </ul>
+            <h6>白恩再次到台灣 > 日本旅遊</h6>
+            <ul>
+              <li class="b">待在阿耶身邊精神好轉了很多，把對方當成生活的動力。</li>
+              <li class="y">對方再次來臺灣找自己，才決定豁出去展開追求。</li>
+              <li class="b">以會被拒絕為前提準備在最後一天告白，最後卻因為氣氛的關係提前告訴阿耶。</li>
+              <li class="y">被搶先告白，很錯愕。</li>
+            </ul>
+            <h6>交往後</h6>
+            <ul>
+              <li class="b">正在慢慢嘗試適度的依靠對方。</li>
+              <li class="y">希望對方能信任並依靠自己。</li>
+            </ul>
           </div>
           <h5>【其他】</h5>
           <div class="text fill">
